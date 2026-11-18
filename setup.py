@@ -3,7 +3,7 @@ from setuptools import setup
 setup(
     name="grafyaml",
     use_scm_version=True,
-    setup_requires=["setuptools_scm"],
+    python_requires=">=3.10",
     url="https://github.com/deliveryhero/grafyaml",
     license="Apache v2.0",
     description="A nice and easy way to template Grafana dashboards in YAML",
@@ -27,7 +27,7 @@ setup(
         "PyYAML>=3.1.0",
         "requests",
         "six>=1.6.0",
-        "voluptuous<=0.10.5",
+        "voluptuous>=0.15.2",
     ],
     classifiers=[
         "Environment :: Console",
@@ -37,7 +37,11 @@ setup(
         "Operating System :: OS Independent",
         "Programming Language :: Python",
         "Programming Language :: Python :: 3",
-        "Programming Language :: Python :: 3.8",
+        "Programming Language :: Python :: 3 :: Only",
+        "Programming Language :: Python :: 3.10",
+        "Programming Language :: Python :: 3.11",
+        "Programming Language :: Python :: 3.12",
+        "Programming Language :: Python :: 3.13",
         "Topic :: Utilities",
     ],
 )

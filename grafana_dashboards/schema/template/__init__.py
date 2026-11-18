@@ -24,14 +24,6 @@ from grafana_dashboards.schema.template.textbox import Textbox
 
 
 class Template(object):
-    def __init__(self):
-        # TODO(pabelanger): This is pretty ugly, there much be a better way to
-        # set default values.
-        self.defaults = {
-            "enabled": False,
-            "list": [],
-        }
-
     def _validate(self):
         def f(data):
             res = {"enabled": False, "list": []}
@@ -65,9 +57,7 @@ class Template(object):
     def get_schema(self):
         schema = v.Schema(
             {
-                v.Required("templating", default=self.defaults): v.All(
-                    self._validate()
-                ),
+                v.Required("templating", default=list): self._validate(),
             }
         )
 

@@ -2,6 +2,8 @@
 Installation
 ============
 
+Grafyaml supports Python 3.10 through 3.13.
+
 At the command line::
 
     $ pip install grafyaml

@@ -10,10 +10,12 @@
 
 ## Install and quick start
 
-Install `grafyaml`:
+Grafyaml supports Python 3.10 through 3.13.
+
+Install `grafyaml` from a Git checkout:
 
 ```console
-pip3 install https://github.com/deliveryhero/grafyaml/archive/master.zip
+python3 -m pip install .
 ```
 
 Create a file, e.g. `my-example-dashboard.yaml`:
@@ -73,12 +75,21 @@ Example: To grant edit permission for the developers team on a resource named my
 - **_Timeseries panels_**: [kube_pod.yaml](examples/advanced/templates/kube_pod.yaml): An example of Timeseries panels of kube_pod_* and container_* metrics.
   - An example dashboard: https://dashboards.syslogistics.io/d/FxYFbAXnk/grafyamls-example?orgId=1
 
-## Build and install from source
+## Build and install a wheel
 
+```console
+python3 -m pip install build
+python3 -m build --wheel
+python3 -m pip install --force-reinstall dist/grafyaml-*.whl
 ```
-python3 -m pip install wheel
-python3 setup.py bdist_wheel
-python3 -m pip install --force-reinstall dist/grafyaml-1.0-py3-none-any.whl
+
+## Run tests
+
+With Python 3.10 through 3.13 installed, run the unit tests and formatting check:
+
+```console
+python3 -m pip install "tox>=4,<5"
+python3 -m tox
 ```
 
 ## How to run linter

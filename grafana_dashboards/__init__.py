@@ -10,9 +10,6 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
-try:
-    from importlib.metadata import version
-except ImportError:
-    from importlib_metadata import version  # for Python < 3.8
+from importlib.metadata import version
 
 __version__ = version("grafyaml")
